@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .background-color {
+            background-color: red;
+            width: 100px;
+            /* height: 100px; */
+            min-height: 200px;
+            /* ẩn nội dung tràn ra ngoài  */
+            /* overflow:  hidden;  */
+            overflow-y: hidden;
+        }
+
+        .background-image {
+            background-image: url(https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFyaXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60);
+            background-size: cover;
+            background-position: center;
+            /* ảnh ko bị lặp  */
+            background-repeat: no-repeat;
+            /* ảnh đứng yên khi cuộn chuột */
+            background-attachment: fixed;
+            width: 70%;
+            height: 500px;
+            /* ko xuất hiện scroll */
+            /* width: 100vw; */
+            /* height: 100vh; */
+        }
+        /* outter-spacing */
+        .margin-div {
+            /* center for block-level elements */
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        /* inner-spacing */
+        .padding-div {
+            width: 10em;
+            height: 100%;
+            padding: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            background-color: red;
+        }
+        .boxed {
+            width: 10rem;
+            height: 10rem;
+            background-color: green;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="padding-div">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus esse excepturi repudiandae natus magnam ullam
+        aperiam temporibus sequi, in explicabo? Distinctio, odit facilis qui est inventore dolorem repudiandae
+        accusantium nisi?
+    </p>
+    <div class="background-color">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique explicabo vitae totam numquam nobis
+        perspiciatis provident veniam, harum nihil laudantium beatae, sit ipsa animi accusamus eaque tempora.
+        Temporibus, nam! Asperiores!
+    </div>
+
+    <div class="background-image">
+
+    </div>
+
+    <div class="margin-div">
+
+    </div>
+    <div class="margin-div-2">
+        <p>Margin Collapse</p>
+    </div>
+
+    <div class="boxed">
+
+    </div>
+</body>
+
+</html>
