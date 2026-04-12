@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* global variables */
+        :root {
+            --primary-color: #00aefd;
+            --secondary-color: #ffa400;
+        }
+        .background {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(to right bottom, rgba(0,173, 253, 0.822), rgba(255,166, 0, 0.761)), 
+            url(https://i.pinimg.com/736x/87/da/bb/87dabbba785123ab6b7367a2db707783.jpg);
+            background-repeat: no-repeat;
+        }
+        .boxed{
+            margin-top: 10px;
+            width: 50vw;
+            height: 50vh;
+            background-image: linear-gradient(to right bottom ,#00aefd , #ffa400);
+            /* 
+            direction: to right bottom : tu trai sang phai va tu tren xuong duoi
+            to right top : tu trai sang phai va tu duoi len tren
+             to left bottom : tu phai sang trai va tu tren xuong duoi
+             to left top : tu phai sang trai va tu duoi len tren
+             
+             */
+        }
+        .btn {
+            border: 1px solid black;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 20px;
+            background-image: linear-gradient(to right bottom ,#00aefd , #ffa400);
+            display: inline-block;
+            margin-left: 2rem;
+           color: transparent; /* an mau chu de hien thi mau nen  */
+            background-clip: text; /* chi hien thi mau nen tren chu */
+             -webkit-background-clip: text; /* chi hien thi mau nen tren chu */ 
+        }
+        .shadow{
+            /* local variable */
+            --primary-color: black;
+            width: 20rem  ;
+            height: 20rem;
+            background-color: var(--primary-color);
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            /* box shadow */
+            box-shadow: 0 9px 5px 5px  red;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+
+    </div>
+
+    <div class="boxed">
+
+    </div>
+    <h3 class="title">
+        Demo background gradient
+    </h3>
+    <div class="button">
+        <button class="btn">Button</button>
+    </div>
+    <div class="shadow">
+        
+    </div>
+</body>
+</html>
