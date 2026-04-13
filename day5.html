@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            font-size: 2.5rem;
+            font-weight: bold  ;
+            list-style-type: none;
+        }
+        /* first list item */
+        li:first-child {
+            color: rgb(184, 27, 27);
+        }
+        /* second list item */
+        li:nth-child(2) {
+            color: green;
+        }
+        /* last list item */
+        li:last-child {
+            color: blue;
+        }
+        /* second-to-last list item */
+        li:nth-last-child(2) {
+            color: rgb(208, 208, 208);
+        }
+        /* all list items except the first one */
+        li:not(:first-child) {
+            color: orange;
+        }
+        /* odd list items */
+        li:nth-child(odd) {
+            color: purple;
+        }
+        /* even list items */
+        li:nth-child(even) {
+            color: cyan;            
+        }
+        /* first list item of its type */
+        li:first-of-type{
+            color: rgb(14, 10, 10);
+        }
+        /* last list item of its type */
+         li:last-of-type{
+            color: yellow;
+        }
+        /* combinator selector */
+        .combinator_selector .title {
+            color: blue;
+        }
+        .combinator_selector .title + .title2 {
+            color: red;
+        }
+
+        /* title is same level with title2 */
+        .combinator_selector2 .title ~ .title2 {
+            color: green;
+        }
+        /* advance selector
+            ^= : starts with
+            $= : ends with
+            *= : contains
+         */
+         a{
+            text-decoration: none;
+         }
+        .advance-selector a[href^="https://"] {
+            color: red;
+
+        }
+        .advance-selector a[href$=".abc"] {
+            color: black;
+        }
+        .advance-selector a[href*=".vn"] {
+            color: chocolate;
+        }
+        /* attribute selector */
+        .advance-selector div[data-title="value"] {
+            color: rgb(234, 0, 255);
+        }
+        .advance-selector p::first-letter {
+            font-size: 2rem;
+            color: red;
+        }
+        .advance-selector p::first-line {
+            font-size: 1.5rem;
+            color: blue
+        }
+        .transition {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 20px;
+            /* transition properties
+                all : apply transition to all properties
+                background-color : only apply transition to background-color property
+                0.5s : duration of the transition
+                color : only apply transition to color property
+                ease-in-out : transition will start slow, then fast, then slow again
+                ease-in : transition will start slow
+                ease-out : transition will start fast and then slow
+                linear : transition will have a constant speed        
+            */
+            transition: all 0.5s ease-in-out;
+            transition-delay: 1s; /* delay before the transition starts */
+        }
+        .transition:hover {
+            background-color: blue;
+        }
+        .ex-2{
+            font-size: 7rem;
+            font-family: 'Courier New', Courier, monospace ;
+            font-weight: bold;
+            background-image: linear-gradient(to left,#FFD96A 10% , #FF4895 90%) ;    
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .ex-1{
+            display: flex;
+            flex-wrap: wrap;
+             justify-content: center;
+             gap: 1rem;
+             margin-top: 20px;
+        }
+        .ex-1 button {
+            width: 240px;;
+            font-size: 1rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        button:nth-child(1) {
+            box-shadow: 0px 5px 10px 0px #5EE3A5;
+            background-image: linear-gradient(to right ,#5EE3A5, #4AC7C1);
+        }
+        button:nth-child(2) {
+            box-shadow: 0px 5px 10px 0px #9EDBFD;
+            background-image: linear-gradient(to right , #9EDBFD , #69AFEC);
+        }
+        button:nth-child(3) {
+            box-shadow: 0px 5px 10px 0px #A7AFFF;
+            background-image: linear-gradient(to right , #A7AFFF,#A685F3);
+        }
+        button:nth-child(4) {
+            box-shadow: 0px 5px 10px 0px #FEC786;
+            background-image: linear-gradient(to right , #FEC786 , #EB6C6C);
+        }
+        button:nth-child(5) {
+            box-shadow: 0px 5px 10px 0px #FBAE9C;
+            background-image: linear-gradient(to right , #FBAE9C,#EB716D);
+        }
+        button:nth-child(6) {
+            box-shadow: 0px 5px 10px 0px #FF99AC;
+            background-image: linear-gradient(to right , #FF99AC , #F57C97);
+        }
+    </style>
+</head>
+<body>
+ <ul>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur labore blanditiis laborum sint vel consectetur eligendi reiciendis praesentium! Maxime et voluptate veniam, vero quia quas quod harum. Tempora, hic impedit.</p>
+    <li>1. CSS Variables</li>
+    <li>2. Box Shadow</li>
+    <li>3. Text Shadow</li>
+
+    <div class="combinator_selector">
+        <h3 class="title">Content</h3>
+        <h5 class="title2">Content 2</h5>
+    </div>
+      <div class="combinator_selector2">
+        <h3 class="title">Content</h3>
+        <h5 class="title2">Content 2</h5>
+    </div>
+
+    <div class="advance-selector">
+        <a href="https://www.google.com" target="_blank">Google</a>
+        <a href="ww.demo.com" target="_blank">Demo</a>
+        <a href="google.vn" target="_blank">GoogleVN </a>
+        <a href="xyz.abc" target="_blank">XYZ.abc</a>
+        <div data-title="value">Content</div>
+        <p>Some text content</p>
+        </div>
+    </div>
+
+    <div class="transition">
+        
+    </div>
+ </ul>
+
+  <div class="ex-1">
+        <button id="bt1">Button1</button>
+        <button id="bt2">Button2</button>
+        <button id="bt3">Button3</button>
+        <button id="bt4">Button4</button>
+        <button id="bt5">Button5</button>
+        <button id="bt6">Button6</button>
+  </div>
+
+  <div class="ex-2">
+    <h1>TEXT</h1>
+  </div>
+</body>
+</html>
