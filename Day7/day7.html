@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(244, 247, 250);
+      }
+      /* main{
+           width: 100%;
+           height: 100%;
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 2;
+           background-color: rgba(0, 0, 0, 0.281);          
+        } */
+      /* main , p {
+            width: 90%;
+            height: 90%;
+            position: absolute;
+            top: 50% ;
+            left: 50%;
+            transform:translate(-50%, -50%) ;
+            background-color: wheat ;
+        } */
+      /*  */
+      .ex-2 {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+      /* .ex-2 img , i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } */
+      /* .ex-2 i {
+            color: white;
+            font-size: 5rem;
+        } */
+      .card {
+        width: 20rem;
+        height: 30rem;
+        background-color: bisque;
+      }
+      .card {
+        width: 20rem;
+        height: 60rem;
+        background-color: black;
+        position: relative;
+      }
+      .sale {
+        color: wheat;
+        padding: 5px;
+        background-color: black;
+        border-radius: 2px;
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        z-index: 2;
+      }
+      .title {
+        position: relative;
+        padding-left: 20px;
+      }
+      .title::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        border-radius: 1rem;
+        background-color: red;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .title::after {
+        content: " Hoc  ";
+      }
+      .title3 {
+        text-align: center;
+        position: relative;
+      }
+      .title3::before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: tomato;
+        position: absolute;
+        left: 0;
+        top: 50%;
+      }
+      .title3 span {
+        display: inline-block;
+        position: relative;
+        padding: 10px;
+        background-color: rgb(244, 247, 250);
+        z-index: 2;
+      }
+      .icon {
+        width: 5rem;
+        height: 5rem;
+        color: red;
+        border-radius: 2px;
+      }
+      .icon::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background-color: orange;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .icon-user {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fugit molestias sequi laudantium incidunt veniam est quae nobis dolor, alias autem, exercitationem culpa eligendi! Consequuntur nisi maiores quae iste dignissimos.</p>
+    </main> -->
+
+    <!-- <div class="ex-2">
+        <img src="https://images.unsplash.com/photo-1774462578811-358d5a76b566?q=80&w=1445&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="500px" width="700px" alt="">
+         <i class="fa fa-play video"></i>
+    </div> -->
+
+    <!-- <div class="card">
+        <span class="sale">
+            Sale off 50 % 
+        </span>
+    </div> -->
+    <!-- <h2 class="title">Suzune</h2>
+        <h3 class="title3">
+            <span>Coding UI</span> 
+        </h3> -->
+
+    <div class="icon">
+      <i class="fa fa-user icon-user"></i>
+    </div>
+  </body>
+</html>

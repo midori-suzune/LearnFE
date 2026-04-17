@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .transform_example {
+            width: 300px;
+            height: 200px;
+            background-color: lightgray ;
+            /* transform:            
+            scale(1.1); 
+            rotate(45deg); 
+            skew(20deg, 10deg);
+            */
+            transform: scale(1, 1.2);
+            /* translate */
+            transform: translate(100px); /* equal to margin-left: 100px; */
+        }
+        .position_relative {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(12, 46, 58);
+            position: relative;
+            top: 20px; /* move down by 20px */
+            left: 30px; /* move right by 30px */
+        }
+        .position_absolute {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(22, 161, 211);
+            position: relative;        
+        }
+        .position_absolute .child {
+            width: 50%;
+            height: 50%;
+            background-color: rgb(255, 0, 0);
+            /* center the child element by the center of the parent */
+            position: absolute;
+            top: 50%; /* move down by 50px from the nearest positioned ancestor */
+            left: 50%; /* move right by 50px from the nearest positioned ancestor */
+            transform: translate(-50% , -50%);
+            /* center the child element by the horizontal center of the parent */
+            left: 50%;
+            transform: translateX(-50%);
+             /* center the child element by the vertical center of the parent */    
+            top: 50%;
+            transform: translateY(-50%);
+            /* overlay all the parent */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* overlay the parent by horizontal  */
+            width: auto;
+            right: 0;
+            left: 0;
+            top: 0;
+            /* overlay the parent by vertical */
+            height: 100%;
+            top: 0;
+        }
+        .z_index {
+            margin-top: 100px;
+            width: 300px;
+            height: 200px;
+            background-color: rgb(22, 161, 211);
+            position: relative;        
+        }
+        .z_index .child {
+            width: 50%;
+            height: 50%;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            height: 100%;
+            top: 0;
+            z-index: 2;
+        }
+        .z_index p{
+            margin: 0;
+            padding: 10px;
+            position: relative;
+            z-index: 1 ;
+        }
+
+        .fixed-absolute{
+            width: 100%;
+            height: 200px;        
+        }
+        .fixed-absolute .header{
+            width: 100%;
+            height: 40px;
+            background-color: rgb(26, 23, 22);
+            position: fixed;
+            top: 0;
+            left: 0;    
+        }
+        body{   
+            padding-top: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="transform_example">
+    
+    </div>
+
+    <p>This is a paragraph outside the transform_example div.</p>
+
+    <div class="position_relative">
+        
+    </div>
+
+    <div class="position_absolute">
+        <div class="child">
+        </div>
+        <p>
+            This is a paragraph inside the position_absolute div. It will be positioned relative to the nearest positioned ancestor, which is the position_absolute div itself.
+        </p>
+    </div>
+    <div class="z_index">
+            <div class="child">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, est aspernatur doloremque animi nulla neque doloribus quo. Debitis minima, aspernatur iste quidem laborum, reprehenderit blanditiis ad at nemo quos veritatis.</p>
+    </div> -->
+
+    <div class="fixed-absolute">
+        <div class="header"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio suscipit eos eligendi earum eius totam dolore temporibus, excepturi modi ut error? Ullam error ipsam nemo iusto voluptatem, rerum debitis.</p>
+
+    </div>
+</body>
+</html>

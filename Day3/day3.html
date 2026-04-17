@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             font-weight: 300;
             font-style: normal;
         }
+
         a {
             color: red;
             text-decoration: none;
@@ -23,61 +25,75 @@
             display: inline-block;
             background-color: yellow;
         }
+
         .font {
             width: 20rem;
             overflow: hidden;
             line-height: 2.5rem;
             background-color: bisque;
-            /* white-space: nowrap ; */ /* ko xuong dong */
-            text-overflow: ellipsis; /* thay the noi dung bi an boi ... */
-            display: -webkit-box; 
+            /* white-space: nowrap ; */
+            /* ko xuong dong */
+            text-overflow: ellipsis;
+            /* thay the noi dung bi an boi ... */
+            display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3; /* so dong can hien thi ... */
+            -webkit-line-clamp: 3;
+            /* so dong can hien thi ... */
         }
+
         .font2 {
             background-color: bisque;
             margin-top: 20px;
             width: 20rem;
             line-height: 2.5rem;
-            word-break: break-word; /* tu dong xuong dong khi gap tu dai */
+            word-break: break-word;
+            /* tu dong xuong dong khi gap tu dai */
         }
+
         .image {
             margin-top: 20px;
             width: 20rem;
             height: 20rem;
             text-align: center;
         }
+
         .image img {
             width: 50%;
             height: 50%;
             display: inline-block;
-            object-fit: cover; /* cat anh theo khung hinh   */
+            object-fit: cover;
+            /* cat anh theo khung hinh   */
             object-position: bottom;
-            margin: 0 auto ;
+            margin: 0 auto;
         }
+
         .pseudo {
             color: black;
             font-size: 1rem;
         }
+
         /* 
             active:: la trang thai khi click vao the a
             hover:: la trang thai khi di chuot vao the a
         */
-        .pseudo::active{
+        .pseudo::active {
             color: red;
         }
+
         .Exercice .box {
             width: 200px;
             height: 300px;
             background-color: #ffa400;
-            color:  black;
+            color: black;
             padding: 10px;
             margin: 15px;
             border: 1px solid black;
             border-radius: 4px;
             text-align: center;
         }
-        .Excercice ,.text {
+
+        .Excercice,
+        .text {
             max-width: 400px;
             border: 1px solid black;
             overflow: hidden;
@@ -86,60 +102,69 @@
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 5;
         }
-        .ex-4{
+
+        .ex-4 {
             margin-top: 20px;
             width: 100vw;
             height: 100vh;
             background-image: url(https://i.pinimg.com/1200x/f7/05/03/f705034acbe9308d170c55e65e4d73c3.jpg);
-            background-repeat: no-repeat; ;
+            background-repeat: no-repeat;
+            ;
             background-size: cover;
         }
+
         .ex-5 {
             margin-top: 20px;
             width: 200px;
             height: 200px;
-            background-repeat: no-repeat; ;
+            background-repeat: no-repeat;
+            ;
             background-size: cover;
         }
-        .ex-5  img {
+
+        .ex-5 img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
         }
-        .ex-6{
+
+        .ex-6 {
             margin-top: 20px;
             width: 500px;
             height: 200px;
             background-color: #ffa400;
         }
+
         .ex-6 .button {
-             display: flex;
-             justify-content: center;
-             align-items: center;
-                gap: 20px;  
-                height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
         }
-              .ex-6 .button button {
-                padding: 10px 20px;
-                font-size: 16px;
-                background-color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-family: 'Courier New', Courier, monospace;
-                font-weight: bold
-            }
+
+        .ex-6 .button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold
+        }
     </style>
 </head>
+
 <body>
     <a href="https://www.google.com">google</a>
     <div class="font">
-        Lorem ipsum dolor sit amet consectetur adipisicing elitdsdssd  sdasdsdasdsdasdsadsd
+        Lorem ipsum dolor sit amet consectetur adipisicing elitdsdssd sdasdsdasdsdasdsadsd
         adjksdjaskdjkasjdksjakdjksadjksjdkljskdjklsjdklsskddsddsd
     </div>
     <div class="font2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elitdsdssd  sdasdsdasdsdasdsadsd
+        Lorem ipsum dolor sit amet consectetur adipisicing elitdsdssd sdasdsdasdsdasdsadsd
         adjksdjaskdjkasjdksjakdjksadjksjdkljskdjklsjdklsskddsddsd
     </div>
 
@@ -149,18 +174,26 @@
 
     <a href="#" class="pseudo">
         <i class="fa-solid fa-house"></i>
-         Home
+        Home
     </a>
 
     <div class="Exercice">
         <div class="box">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa inventore obcaecati ad, odit adipisci non? Quas ad corrupti reiciendis commodi eos aliquam adipisci perspiciatis quibusdam ipsum provident, quia facilis nam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa inventore obcaecati ad, odit adipisci non?
+                Quas ad corrupti reiciendis commodi eos aliquam adipisci perspiciatis quibusdam ipsum provident, quia
+                facilis nam?</p>
         </div>
         <div class="text">
-            <p>Lorem ipryertgrggfjgkjkfjgkfjkgjfkjgkfdjgkjdfkgjkfdjgkfjgkfjgkjfkgjkfjgkdfjgkjfdkg f g gjfkgjkfjgkfjkgfgkfjgkldfjklg jdfklgjkldf gklfdj kgljfdklgj kldfjgklj gldfkgdfkgjsum dolor sit amet consectetur adipisicing elit. Tempore recusandae explicabo, deserunt architecto voluptatum, exercitationem sit eum ipsum dolore vero culpa molestiae? Nisi assumenda, magnam suscipit adipisci maxime voluptatum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem explicabo magni aliquid quasi! Ipsum suscipit temporibus a consectetur pariatur fugiat earum doloribus, unde rerum aperiam qui quos esse laborum distinctio.</p>
+            <p>Lorem ipryertgrggfjgkjkfjgkfjkgjfkjgkfdjgkjdfkgjkfdjgkfjgkfjgkjfkgjkfjgkdfjgkjfdkg f g
+                gjfkgjkfjgkfjkgfgkfjgkldfjklg jdfklgjkldf gklfdj kgljfdklgj kldfjgklj gldfkgdfkgjsum dolor sit amet
+                consectetur adipisicing elit. Tempore recusandae explicabo, deserunt architecto voluptatum,
+                exercitationem sit eum ipsum dolore vero culpa molestiae? Nisi assumenda, magnam suscipit adipisci
+                maxime voluptatum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem explicabo magni
+                aliquid quasi! Ipsum suscipit temporibus a consectetur pariatur fugiat earum doloribus, unde rerum
+                aperiam qui quos esse laborum distinctio.</p>
         </div>
         <div class="ex-4">
-            
+
         </div>
         <div class="ex-5">
             <img src="https://i.pinimg.com/1200x/fa/ac/74/faac741daa84c1ff14ab7297c0b411b7.jpg" alt="">
@@ -176,4 +209,5 @@
         </div>
     </div>
 </body>
+
 </html>
