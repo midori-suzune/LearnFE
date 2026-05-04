@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+        }
+        ul , li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .work{
+            max-width: 80%;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 0 1rem;
+            background-color: white;
+            border: 1px solid #1a0a3b;
+            box-shadow: 0 4px 8px rgba(26, 10, 59, 0.2); /* to add a subtle shadow effect to the container */
+            border-radius: 10px;
+        }
+        .work_heading{        
+            margin-bottom: 2rem;
+            color: #1a0a3b;
+            font-weight: bold; 
+            font-size: 2rem;
+            /* border-bottom: 3px solid #1a0a3b; */
+            /* display: inline-block; */
+            padding-bottom: 1rem;
+            position: relative;
+            margin-bottom: 3rem;
+            text-transform: capitalize;/* to capitalize the first letter of each word */
+        }
+        .work_heading::before{
+            content: "";
+            width: 55px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #1a0a3b;
+            border-bottom: 3px solid #1a0a3b;
+            margin-right: 0.5rem;
+            color: inherit;
+            border-radius: 4px;
+            padding: 2px;
+        ;
+        }
+        .work_filter{
+            display: flex;
+            justify-content: space-between;       
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .work_tab{
+            display: flex;
+            padding: 1rem;
+            gap: 1rem;
+            text-align: center;  
+        }
+        .work_tab_item{
+            padding: 0.5rem 1rem;
+            border-radius: 15px 0px 15px 15px;
+            border: 1px solid #1a0a3b;
+            color: #1a0a3b;
+            cursor: pointer;
+            margin-left: -03px;
+            transition: all 0.3s ease-in-out; /* to add a smooth transition effect when hovering over the tab items */
+        }
+        .work_tab_item:hover{
+            background-color: #1a0a3b;
+            color: white;
+        }
+        .work_all{
+            display: inline-block; /* easy css */
+            color: #1a0a3b;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: aquamarine;
+            opacity: 0.85;
+            font-weight: bold;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 4px 4px 8px rgba(26, 10, 59, 0.2); /* to add a subtle shadow effect to the images */
+        }
+        .work_list{
+            display: flex;
+            gap: 1rem;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="work">
+        <h2 class="work_heading"> Our Works</h2>
+        <div class="work_filter">
+            <ul class="work_tab">
+                <li class="work_tab_item">
+                    All
+                </li>
+                <li class="work_tab_item">
+                    Illustration
+                </li>
+                <li class="work_tab_item">
+                    Website
+                </li>
+                <li class="work_tab_item">
+                    UX/UI
+                </li>
+                <li class="work_tab_item">
+                    Logo
+                </li>
+            </ul>
+            <a href="#" class="work_all">View All</a>
+        </div>
+        <ul class="work_list">
+            <li class="work-item">
+                <img src="https://i.pinimg.com/736x/9b/cb/f2/9bcbf2898cdf1a8060fbbbb65efb75cb.jpg" alt="">
+            </li>
+            <li class="work-item">
+                <img src="https://i.pinimg.com/736x/40/8b/ae/408baedf09b4d9f0b477f2f19078b41b.jpg" alt="">
+            </li>
+            <li class="work-item">
+                <img src="https://i.pinimg.com/1200x/75/01/f3/7501f3ac3d5db688519774261219b650.jpg  " alt="">
+            </li>           
+            <li class="work-item">
+                <img src="https://i.pinimg.com/736x/18/7a/58/187a58c8feb5cc99a3c50f79ef60740e.jpg" alt="">
+            </li>
+        </ul>       
+    </div>
+</body>
+</html>
