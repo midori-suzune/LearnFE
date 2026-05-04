@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            background-color: lightgray;
+        }
+        ul , li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .image-list{
+            display: flex;
+            justify-content: space-between;
+            margin-left: -30px;
+            /* to hide the overflow */
+            overflow: hidden; 
+        }
+        .image-item {
+            width: 25%;
+            height: auto;
+            margin-left: 30px;            
+        }
+        .image-item img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <ul class="image-list">
+        <li class="image-item">
+            <img src="https://i.pinimg.com/736x/9b/cb/f2/9bcbf2898cdf1a8060fbbbb65efb75cb.jpg" alt="">
+        </li>
+        <li class="image-item">
+            <img src="https://i.pinimg.com/736x/40/8b/ae/408baedf09b4d9f0b477f2f19078b41b.jpg" alt="">
+        </li>
+        <li class="image-item">
+            <img src="https://i.pinimg.com/1200x/75/01/f3/7501f3ac3d5db688519774261219b650.jpg" alt="">
+        </li>
+        <li class="image-item">
+            <img src="https://i.pinimg.com/736x/18/7a/58/187a58c8feb5cc99a3c50f79ef60740e.jpg" alt="">
+        </li>
+    </ul>
+</body>
+</html>
