@@ -88,8 +88,8 @@ console.log(4 !== "5"); // true (strict inequality, no type coercion)
 // alert("Hello, " + userInput + "!"); // Hello, [user's name]!
 
 // confirm() : displays a dialog box with a specified message, along with an OK and a Cancel button. It returns true if the user clicks OK, and false if the user clicks Cancel.
-let isConfirmed = confirm("Do you want to proceed?") ;
-console.log(isConfirmed); // true if OK is clicked, false if Cancel is clicked
+// let isConfirmed = confirm("Do you want to proceed?") ;
+// console.log(isConfirmed); // true if OK is clicked, false if Cancel is clicked
 
 // non-returning function : return undefined by default if there is no return statement.
 
@@ -97,4 +97,37 @@ function sum(a , b) {
     return a + b ;
 }
 let kq = sum(2, 3) ; // 5
-console.log("Sum of Values: " + kq); // Sum of Values://  5
+console.log("Sum of Values: " + kq); // Sum of Values: 5
+
+// default parameters : allows you to specify default values for function parameters if no value is provided when the function is called.
+function sum2(a =3 , b = 4) {
+    return a + b ;
+}
+console.log(sum2()); // 7 (default values are used)
+console.log(sum2(5)); // 9 (a is 5, b is default 4)
+console.log(sum2(5, 6)); // 11 (a is 5, b is 6)
+
+let store = sum2(2 , 3); // 5
+console.log(store); // 5
+
+// anonymous function : a function that is defined without a name and is often used as an argument to other functions or assigned to a variable.
+let anonymousFunc = function() {
+    console.log("This is an anonymous function");
+}
+anonymousFunc(); // This is an anonymous function
+
+// arrow function : a shorter syntax for writing functions in JavaScript, using the => syntax.
+let arrowFunc = () => {
+    console.log("This is an arrow function");
+}
+arrowFunc();
+
+let arrowFunc2 = ( x ) => {
+    return x * 2 ;
+}
+console.log(arrowFunc2(5)); // 10
+
+// arrow function with implicit return : if the function body contains only a single expression, you can omit the curly braces and the return keyword.
+let add = (a, b) => a + b ;
+console.log(add(2, 3)); // 5
+
