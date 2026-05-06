@@ -13,4 +13,6 @@ let student = [
 for( index in student) {
     console.log(student[index].name);
 }
+m
+
 
