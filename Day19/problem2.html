@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            height: 100vh;
+        }
+        .content{
+            width:400px;
+            height: 100px;;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0.25px solid rgba(153, 150, 150, 0.521);
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.075);
+            border-radius: 5px;
+            padding: 1rem;
+            display: flex  ;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .content-button{
+            display: flex;
+            gap: 10px;            
+        }
+        .content-button button{
+            padding: 0.5rem 1.8rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+        .content-button button.active{
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="content-button">
+            <button>Popular</button>            
+            <button>Hot</button>
+            <button>Latest</button>
+        </div>
+        <p>poris inciduporis tempore minima eius laborum cumque!</p>
+    </div>
+    <script src="problem2.js"></script>
+</body>
+</html>
