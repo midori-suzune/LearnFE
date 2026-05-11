@@ -1,59 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            width: 100%;
-            height: 100vh;
-        }
-        .content{
-            width:400px;
-            height: 100px;;
-            margin-top: 2rem;
-            margin-left: auto;
-            margin-right: auto;
-            border: 0.25px solid rgba(153, 150, 150, 0.521);
-            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.075);
-            border-radius: 5px;
-            padding: 1rem;
-            display: flex  ;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .content-button{
-            display: flex;
-            gap: 10px;            
-        }
-        .content-button button{
-            padding: 0.5rem 1.8rem;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            border-radius: 15px;
-        }
-        .content-button button.active{
-            background-color: #007BFF;
-            color: white;
-        }
-    </style>
+    <title>Day 19 - Problem 2</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <div class="content">
-        <div class="content-button">
-            <button>Popular</button>            
-            <button>Hot</button>
-            <button>Latest</button>
+
+<body class="min-h-screen bg-slate-100 px-4 py-8 font-sans">
+    <div class="mx-auto flex w-full max-w-md flex-col items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-lg">
+        <div class="content-button flex gap-3">
+            <button class="active rounded-full bg-blue-600 px-6 py-2 text-white">Popular</button>
+            <button class="rounded-full bg-slate-200 px-6 py-2 text-slate-700">Hot</button>
+            <button class="rounded-full bg-slate-200 px-6 py-2 text-slate-700">Latest</button>
         </div>
-        <p>poris inciduporis tempore minima eius laborum cumque!</p>
+        <div class="text w-full">
+            <div class="text-content active block">
+                <p class="text-center text-slate-800">poris inciduporis tempore minima eius laborum cumque!</p>
+            </div>
+            <div class="text-content hidden">
+                <p class="text-center text-slate-800">How to create a simple button in HTML?</p>
+            </div>
+            <div class="text-content hidden">
+                <p class="text-center text-slate-800">What is the difference between let and var in JavaScript?</p>
+            </div>
+        </div>
     </div>
     <script src="problem2.js"></script>
 </body>
+
 </html>
