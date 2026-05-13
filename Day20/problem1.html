@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box-1,
+        .box-2 {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .content {
+            font-size: 16px;
+            color: #333;
+        }
+
+        main .content {
+            background-color: #f1eded93;  
+            width: 100%;          
+            max-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            transform: translateY(-2px);
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+
+        main .content.active {
+            max-height: 200px;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .title { 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 4px;
+            border: 1px solid #dddddd71;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .title .icon {
+            font-size: 1rem;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box-1">
+            <div class="title">
+                <p>Welcome to accordition heading 1</p>
+                <i class="fas fa-chevron-down icon"></i>
+            </div>
+
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="title">
+                <p>Welcome to accordition heading 2</p>
+                <i class="fas fa-chevron-down icon"></i>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+            </div>
+        </div>
+    </main>
+    <script src="problem1.js"></script>
+</body>
+
+</html>
