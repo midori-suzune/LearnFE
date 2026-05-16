@@ -11,5 +11,4 @@ document.addEventListener('click', (event) => {
          cover.classList.remove('active');
          click.classList.remove('inactive');
     }
-})
-
+}) 
