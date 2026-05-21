@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+            margin: 100px auto;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3d6ef7;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #3d6ef7;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2a4ebf;
+        }
+        #password-field {
+            position: relative;
+        }
+        #password-field input {
+            width: 92%;
+        }
+        #password-field i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+        }
+        #password-field i.active {
+            color: #3d6ef7;
+        }
+        #confirm-password-field {
+            position: relative;
+        }
+        #confirm-password-field input {
+            width: 92%;
+        }
+        #confirm-password-field i {
+            position: absolute;
+            right: 10px;
+            bottom: 50%;
+            transform: translateY(50%);
+            cursor: pointer;
+            color: #888;
+        }
+        #confirm-password-field i.active {
+            color: #3d6ef7;
+        }   
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <input name="name" required placeholder="Name" />
+        <input name="email" type="email" required placeholder="Email" />
+        <div id="password-field">
+            <input name="password" type="password" required minlength="6" placeholder="Password"/>
+             <i class="fas fa-eye" id="toggle-password"></i>
+        </div>
+        <div id="confirm-password-field">
+               <input name="confirm" type="password" required placeholder="Confirm password" />
+               <i class="fas fa-eye" id="toggle-confirm-password"></i>
+        </div>
+        <label><input name="agree" type="checkbox" required /> I agree</label>
+        <button type="submit">Send</button>
+    </form>
+    <script src="validation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f8;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            color: #111;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 8vh;
+        }
+
+        .main-title {
+            width: 360px;
+            padding: 16px 22px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #e53935;
+            color: #fff;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            user-select: none;
+        }
+
+        .drop-down-content {
+            background-color: #e53935;
+            width: 360px;
+            position: absolute;
+            margin-top: 8px;
+            padding: 6px;
+            opacity: 0;
+            transform: translateY(-6px) scale(0.98);
+            transition: opacity 180ms ease, transform 180ms ease;
+            left: 50%;
+            transform-origin: top center;
+            pointer-events: none;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        .drop-down-content.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(6px) scale(1);
+            pointer-events: auto;
+            left: 50%;
+        }
+        .content {
+            padding: 12px 14px;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            border-radius: 6px;
+        }
+        .content:hover {
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* layout wrapper to keep title and dropdown together */
+        .cta-wrap {
+            position: relative;
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (max-width: 480px) {
+            .cta-wrap, .main-title, .drop-down-content { width: 90%; }
+            body { padding-top: 4vh; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cta-wrap">
+        <div class="main-title" role="button" tabindex="0">
+            Call to Action
+        </div>
+        <div class="drop-down-content">
+        <div class="content">New Project <i class="fas fa-plus"></i></div>
+        <div class="content">View Profile <i class="fas fa-user"></i></div>
+        <div class="content">Settings <i class="fas fa-cog"></i></div>
+        <div class="content">Logout <i class="fas fa-sign-out-alt"></i></div>
+        </div>
+    </div>
+     <script src="problem1.js"></script>
+</body>
+
+</html>

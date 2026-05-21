@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            display: flex;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            gap: 20px;
+            font-size: 20px;            
+        }
+        menu a {
+            text-decoration: none;
+            color: black;
+
+        }
+        .line-effect {
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #ff6b6b, transparent);
+            transition: all 0.3s ease;        
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <menu>
+            <a href="#">Home</a>
+        </menu>
+        <menu>
+            <a href="#">Page</a>
+        </menu>
+        <menu>
+            <a href="#">Blog</a>
+        </menu>
+        <menu>
+            <a href="#">Contact</a>
+        </menu>
+    </div>
+    <script src="problem.js"></script>
+</body>
+</html>
