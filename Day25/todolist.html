@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .todo {
+            position: absolute;
+            box-sizing: border-box;
+            top: 10%;
+            left: 50%;
+            width: 400px;
+            height: auto;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .todo-form {
+            display: flex;
+        }
+
+        .todo-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .todo-submit {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .todo-list {
+            margin-top: 10px;
+        }
+        .todo-list .current-task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        .todo-list .current-task.delete {
+            display: none;
+        }
+        .todo-list .current-task span:hover {
+            color: #dc3545;
+            cursor: pointer;
+        }
+    </style>
+    <script src="todolist.js" defer></script>
+</head>
+
+<body>
+    <div class="todo">
+        <form class="todo-form">
+            <input type="text" name="todo" class="todo-input" placeholder="Enter your task" autocomplete="off" required>
+            <button type="submit" class="todo-submit">Add</button>
+        </form>
+        <div class="todo-list">
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
