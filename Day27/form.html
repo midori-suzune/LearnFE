@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .form-group {
+            margin-bottom: 20px;                
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            top: 0;
+            left: 30px;
+            background-color: #a768e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+    <script src="form.js" defer></script>
+</head>
+<body>
+    <form  class="form-post" method="post">
+        <div class="form-group">
+            <label for="title" style = "margin-right: 20px;">Title:</label>
+            <input type="text" name="title" placeholder="Enter post title" required>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" name="author" placeholder="Enter author name" required>
+        </div>
+        <br><br>
+        <button type="submit">Add Post</button>
+    </form>
+</body>
+</html>
