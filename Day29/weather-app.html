@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="weather-app.js" defer></script>
+    <style>
+        .card{
+            width: 300px;
+            height: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: linear-gradient(150deg,#67ffd4 ,#7a89c2);
+            margin: 50px auto;
+        }
+        .card h1{
+            margin-bottom: 20px;
+        }
+        .card button{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .search{
+            width: 100%;
+            height: 40px;
+            gap: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search i{
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .search input{
+            width: 80%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 0 10px;
+            font-size: 16px;
+        }
+        #weather-result{
+            font-size: 40px;
+            position: relative;
+            top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Weather App</h1>
+        <div class="search">
+            <input type="text" placeholder="Enter city name" id="city-name">
+            <i class="fas fa-search" id="search-icon"></i>
+        </div> 
+        <div id="weather-result">
+            
+        </div>       
+    </div>
+</body>
+</html>
