@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Blog-platform.js" defer></script>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;        
+            height: 100%;
+            width: 100%;
+            /* prevent horizontal scrolling */
+            overflow-x: hidden;
+            /* overflow-y: auto; */
+        }
+        :root {
+            --header-height: 100px;
+            --height-body : 100%;
+        }
+        header{
+            height: var(--header-height);
+            width: 100%;
+        }
+        header .content{
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;       
+            padding: 0 20px;
+        }
+        header .title {
+            font-size: 20px;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+
+        }
+        header .menu {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+        header .auth {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+        }
+        header .menu ul{
+            list-style: none;
+            display: flex;
+            gap: 100px;
+            margin: 0;
+            padding: 0;
+        }
+        header .menu ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+        header .auth button{
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        main{
+            height: 100%;    
+            width: 100%;
+            align-items: flex-start;
+            display: flex;
+            justify-content: center;
+        }
+        main .main-content{
+            max-width: 800px;
+            width: 100%;
+            min-height: 400px;        
+            background-color: #c22222;
+            margin: 20px auto;  
+            border-radius: 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <div class="title">
+                <h2>Blog Platform</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth">
+                <button id="login-btn">Login</button>
+            </div>
+        </div>  
+    </header>
+    <main>
+        <div class="main-content">
+           
+        </div>
+        
+    </main>
+     <div class="main-content">
+           
+     </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
