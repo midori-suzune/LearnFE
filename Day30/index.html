@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal — Tạp chí Tư duy & Văn hóa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1A1814;
+    --ink-light: #3D3A35;
+    --warm-gray: #8C8880;
+    --cream: #F8F5EE;
+    --cream-dark: #EDE9DF;
+    --rule: #C8C3B8;
+    --accent: #B5400A;
+    --accent-light: #F0E8DF;
+    --gold: #9E7B3C;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 2.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--warm-gray);
+  }
+
+  .date-line { text-transform: uppercase; }
+
+  .masthead-actions { display: flex; gap: 1.5rem; align-items: center; }
+  .masthead-actions a {
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .masthead-actions a:hover { color: var(--ink); }
+  .subscribe-btn {
+    background: var(--ink);
+    color: var(--cream) !important;
+    padding: 4px 14px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .masthead-logo-row {
+    padding: 1rem 2.5rem 0.8rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .logo em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 4px;
+  }
+
+  .masthead-rule {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    padding: 0 2.5rem 0.85rem;
+  }
+  .masthead-rule::before,
+  .masthead-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .rule-ornament {
+    font-size: 14px;
+    color: var(--warm-gray);
+    letter-spacing: 0.5em;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0.6rem 2.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .nav a {
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav a:hover { color: var(--accent); }
+  .nav a.active {
+    color: var(--accent);
+  }
+  .nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* ── HERO SECTION ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1px 380px;
+    gap: 0;
+    padding: 2.5rem 0 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-main { padding-right: 2.5rem; }
+  .hero-sidebar { padding-left: 2.5rem; }
+  .col-divider { background: var(--rule); }
+
+  .issue-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .issue-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #2C2820 0%, #4A3F30 40%, #6B5840 100%);
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-inner {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(181, 64, 10, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(158, 123, 60, 0.12) 0%, transparent 50%);
+  }
+
+  .hero-image-text {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-style: italic;
+    color: rgba(248, 245, 238, 0.08);
+    user-select: none;
+    letter-spacing: -2px;
+    font-weight: 900;
+  }
+
+  .image-caption {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248,245,238,0.45);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title em { font-style: italic; color: var(--ink-light); }
+
+  .hero-excerpt {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--warm-gray);
+    padding-top: 1rem;
+    border-top: 1px solid var(--cream-dark);
+    margin-bottom: 2rem;
+  }
+
+  .byline-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--cream-dark);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--warm-gray);
+  }
+
+  .byline strong { color: var(--ink); font-weight: 500; text-transform: none; letter-spacing: 0; }
+  .byline-sep { color: var(--rule); }
+  .read-time { margin-left: auto; }
+
+  /* Sidebar stories */
+  .sidebar-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar-story {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .sidebar-story:hover { opacity: 0.75; }
+  .sidebar-story:last-child { border-bottom: none; }
+
+  .sidebar-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+
+  .sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.3;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .sidebar-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: var(--warm-gray);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── THREE COLUMN SECTION ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2.5rem 0 1.75rem;
+  }
+  .section-header h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    white-space: nowrap;
+  }
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .article-card { cursor: pointer; }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--cream-dark);
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-image-a { background: linear-gradient(135deg, #2a3a2a 0%, #3d5c3d 100%); }
+  .card-image-b { background: linear-gradient(135deg, #1a2a3a 0%, #2d4a5a 100%); }
+  .card-image-c { background: linear-gradient(135deg, #3a2a1a 0%, #5a4030 100%); }
+
+  .card-image-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 900;
+    color: rgba(248,245,238,0.1);
+  }
+
+  .article-card:hover .card-image-icon { color: rgba(248,245,238,0.16); }
+
+  .card-number {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: rgba(248,245,238,0.4);
+  }
+
+  .card-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+  .article-card:hover .card-title { color: var(--accent); }
+
+  .card-excerpt {
+    font-size: 14.5px;
+    color: var(--warm-gray);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  .card-byline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: var(--warm-gray);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  /* ── FULL WIDTH FEATURE ── */
+  .full-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 2.5rem 0;
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .full-feature-text {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .full-feature-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .full-feature-label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .full-feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 700;
+    line-height: 1.18;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+  }
+  .full-feature-title em { font-style: italic; color: rgba(248,245,238,0.65); }
+
+  .full-feature-excerpt {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: rgba(248,245,238,0.65);
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(158,123,60,0.4);
+    padding-bottom: 2px;
+    width: fit-content;
+    transition: gap 0.2s, border-color 0.2s;
+  }
+  .read-more:hover { gap: 0.75rem; border-color: var(--gold); }
+
+  .full-feature-image {
+    background: linear-gradient(135deg, #2e2416 0%, #4a3820 40%, #6b5030 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .full-feature-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 60%, rgba(181, 64, 10, 0.22) 0%, transparent 65%);
+  }
+
+  .ff-img-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-style: italic;
+    font-weight: 900;
+    color: rgba(248,245,238,0.06);
+    position: relative;
+    user-select: none;
+    letter-spacing: -4px;
+  }
+
+  /* ── BOTTOM GRID ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1px 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .two-col-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+
+  .list-story {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--cream-dark);
+    cursor: pointer;
+  }
+  .list-story:hover .list-title { color: var(--accent); }
+
+  .list-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: var(--cream-dark);
+    font-weight: 700;
+    line-height: 1;
+    min-width: 32px;
+  }
+
+  .list-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .list-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--ink);
+    font-weight: 600;
+    transition: color 0.2s;
+    margin-bottom: 4px;
+  }
+
+  .list-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: var(--warm-gray);
+  }
+
+  /* Tags / Topics sidebar */
+  .topics-sidebar {}
+
+  .topics-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .topic-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity 0.2s;
+  }
+  .topic-item:hover { opacity: 0.7; }
+
+  .topic-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .topic-count { font-size: 10px; color: var(--warm-gray); letter-spacing: 0.05em; }
+
+  .newsletter-box {
+    margin-top: 1.75rem;
+    background: var(--accent-light);
+    border: 1px solid rgba(181,64,10,0.18);
+    padding: 1.25rem;
+  }
+  .nl-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .nl-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+  .nl-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    font-weight: 300;
+    margin-bottom: 0.9rem;
+    line-height: 1.55;
+  }
+  .nl-form { display: flex; gap: 0; }
+  .nl-input {
+    flex: 1;
+    border: 1px solid var(--rule);
+    border-right: none;
+    background: var(--cream);
+    padding: 8px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink);
+    outline: none;
+  }
+  .nl-input::placeholder { color: var(--warm-gray); }
+  .nl-btn {
+    background: var(--ink);
+    color: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 8px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nl-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 2px solid var(--ink);
+    padding: 2rem 2.5rem;
+    margin-top: 0;
+  }
+  .footer-inner { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+  .footer-links a { color: var(--warm-gray); text-decoration: none; }
+  .footer-copy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: var(--warm-gray);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-main { animation: fadeUp 0.7s ease both; }
+  .hero-sidebar { animation: fadeUp 0.7s ease 0.15s both; }
+  .three-col { animation: fadeUp 0.7s ease 0.25s both; }
+
+  /* ── HOVER EFFECTS ── */
+  .hero-image { transition: filter 0.3s; cursor: pointer; }
+  .hero-image:hover { filter: brightness(1.06); }
+
+  .card-image { transition: filter 0.3s; }
+  .article-card:hover .card-image { filter: brightness(1.1); }
+
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span class="date-line">Chủ Nhật, 7 tháng 6 năm 2026 · Số 148</span>
+    <div class="masthead-actions">
+      <a href="#">Đăng nhập</a>
+      <a href="#">Giới thiệu</a>
+      <a href="#" class="subscribe-btn">Đăng ký đọc</a>
+    </div>
+  </div>
+
+  <div class="masthead-logo-row">
+    <div class="logo">The <em>Journal</em></div>
+    <div class="tagline">Tư duy · Văn hóa · Cuộc sống</div>
+    <div class="masthead-rule">
+      <div class="rule-ornament">✦ ✦ ✦</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="#" class="active">Tất cả</a>
+    <a href="#">Văn hóa</a>
+    <a href="#">Công nghệ</a>
+    <a href="#">Thiết kế</a>
+    <a href="#">Xã hội</a>
+    <a href="#">Tản văn</a>
+    <a href="#">Phỏng vấn</a>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-main">
+      <div class="issue-label">Bài viết nổi bật</div>
+      <div class="hero-image">
+        <div class="hero-image-inner"></div>
+        <div class="hero-image-text">AI</div>
+        <div class="image-caption">Minh họa · The Journal</div>
+      </div>
+      <h1 class="hero-title">Khi trí tuệ nhân tạo <em>viết lại</em> định nghĩa về sáng tạo của con người</h1>
+      <p class="hero-excerpt">Trong hai thập kỷ qua, chúng ta đã từng tranh luận rằng máy móc có thể thay thế lao động chân tay. Giờ đây, câu hỏi đặt ra khác hẳn: điều gì còn lại là của riêng con người, khi cả tư duy và cảm xúc đều có thể được mô phỏng?</p>
+      <div class="byline">
+        <div class="byline-avatar">M</div>
+        <span><strong>Nguyễn Minh Anh</strong></span>
+        <span class="byline-sep">·</span>
+        <span>24 tháng 5, 2026</span>
+        <span class="byline-sep">·</span>
+        <span>12 phút đọc</span>
+        <span class="read-time byline-sep">Công nghệ</span>
+      </div>
+    </div>
+
+    <div class="col-divider"></div>
+
+    <aside class="hero-sidebar">
+      <div class="sidebar-label">
+        <span>Mới nhất</span>
+        <span style="font-size:9px; font-weight:400;">Xem tất cả →</span>
+      </div>
+
+      <div class="sidebar-story">
+        <div class="sidebar-category">Tản văn</div>
+        <div class="sidebar-title">Hà Nội trong mắt người trở về sau mười năm xa xứ</div>
+        <div class="sidebar-meta">Trần Hà Linh · 8 phút đọc</div>
+      </div>
+
+      <div class="sidebar-story">
+        <div class="sidebar-category">Thiết kế</div>
+        <div class="sidebar-title">Typography là linh hồn thầm lặng của mọi giao diện số</div>
+        <div class="sidebar-meta">Phạm Đức Huy · 6 phút đọc</div>
+      </div>
+
+      <div class="sidebar-story">
+        <div class="sidebar-category">Xã hội</div>
+        <div class="sidebar-title">Gen Z và cuộc khủng hoảng bản sắc trong thời đại mạng xã hội</div>
+        <div class="sidebar-meta">Lê Bảo Châu · 10 phút đọc</div>
+      </div>
+
+      <div class="sidebar-story">
+        <div class="sidebar-category">Phỏng vấn</div>
+        <div class="sidebar-title">Nhà thiết kế Vũ Hà nói về triết học đằng sau sản phẩm</div>
+        <div class="sidebar-meta">Biên tập · 14 phút đọc</div>
+      </div>
+
+      <div class="sidebar-story">
+        <div class="sidebar-category">Văn hóa</div>
+        <div class="sidebar-title">Cà phê Việt đang chinh phục thế giới theo cách riêng của mình</div>
+        <div class="sidebar-meta">Hoàng Minh · 7 phút đọc</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- THREE COL -->
+  <div class="section-header"><h2>Khám phá thêm</h2></div>
+
+  <div class="three-col">
+    <article class="article-card">
+      <div class="card-image card-image-a">
+        <span class="card-number">Vol. 01</span>
+        <div class="card-image-icon">Đ</div>
+      </div>
+      <div class="card-category">Thiết kế</div>
+      <h3 class="card-title">Đô thị tương lai và kiến trúc xanh ở Đông Nam Á</h3>
+      <p class="card-excerpt">Từ Singapore đến Đà Nẵng, các thành phố đang thử nghiệm mô hình đô thị sinh thái chưa từng có tiền lệ.</p>
+      <div class="card-byline">
+        <span>Kiến Trúc Sư Lam</span>
+        <span>·</span>
+        <span>9 phút đọc</span>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <div class="card-image card-image-b">
+        <span class="card-number">Vol. 02</span>
+        <div class="card-image-icon">Â</div>
+      </div>
+      <div class="card-category">Âm nhạc</div>
+      <h3 class="card-title">Nhạc indie Việt và cuộc trỗi dậy của những giọng ca độc lập</h3>
+      <p class="card-excerpt">Không cần label lớn, không cần truyền thông đại chúng — chỉ cần Spotify và một cộng đồng trung thành.</p>
+      <div class="card-byline">
+        <span>Ngô Thanh Bình</span>
+        <span>·</span>
+        <span>5 phút đọc</span>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <div class="card-image card-image-c">
+        <span class="card-number">Vol. 03</span>
+        <div class="card-image-icon">S</div>
+      </div>
+      <div class="card-category">Khoa học</div>
+      <h3 class="card-title">Sự cô đơn như một trạng thái sinh học, không chỉ cảm xúc</h3>
+      <p class="card-excerpt">Nghiên cứu mới nhất cho thấy cô đơn mãn tính ảnh hưởng đến ADN theo cách chúng ta chưa hề ngờ tới.</p>
+      <div class="card-byline">
+        <span>TS. Vân Anh</span>
+        <span>·</span>
+        <span>11 phút đọc</span>
+      </div>
+    </article>
+  </div>
+
+  <!-- FULL FEATURE BANNER -->
+  <div class="full-feature">
+    <div class="full-feature-text">
+      <div class="full-feature-label">Chuyên đề tháng</div>
+      <h2 class="full-feature-title">Chúng ta đang sống trong <em>kỷ nguyên chú ý</em> — và đang thua cuộc</h2>
+      <p class="full-feature-excerpt">Mỗi ứng dụng, mỗi thông báo, mỗi lượt cuộn đều được thiết kế để giành lấy giây phút hiện tại của bạn. Nhưng sự chú ý là hữu hạn — và đây là cách lấy lại nó.</p>
+      <a href="#" class="read-more">Đọc chuyên đề → </a>
+    </div>
+    <div class="full-feature-image">
+      <div class="ff-img-text">∞</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM GRID -->
+  <div class="bottom-grid">
+    <div>
+      <div class="section-header" style="margin-top:0;"><h2>Đọc thêm</h2></div>
+      <div class="two-col-list">
+        <div class="list-story">
+          <div class="list-num">01</div>
+          <div>
+            <div class="list-category">Công nghệ</div>
+            <div class="list-title">Open source và tương lai của phần mềm tự do</div>
+            <div class="list-meta">Minh Quân · 6 min</div>
+          </div>
+        </div>
+        <div class="list-story">
+          <div class="list-num">02</div>
+          <div>
+            <div class="list-category">Văn hóa</div>
+            <div class="list-title">Đọc sách giấy trong thời đại của màn hình</div>
+            <div class="list-meta">Thu Hương · 4 min</div>
+          </div>
+        </div>
+        <div class="list-story">
+          <div class="list-num">03</div>
+          <div>
+            <div class="list-category">Xã hội</div>
+            <div class="list-title">Tại sao người trẻ ngày càng chọn sống một mình</div>
+            <div class="list-meta">Lan Anh · 8 min</div>
+          </div>
+        </div>
+        <div class="list-story">
+          <div class="list-num">04</div>
+          <div>
+            <div class="list-category">Thiết kế</div>
+            <div class="list-title">Màu sắc và tâm lý học: thiết kế không gian chữa lành</div>
+            <div class="list-meta">Đức Huy · 7 min</div>
+          </div>
+        </div>
+        <div class="list-story">
+          <div class="list-num">05</div>
+          <div>
+            <div class="list-category">Tản văn</div>
+            <div class="list-title">Ký ức mùi hương và những điều ta không thể diễn đạt</div>
+            <div class="list-meta">Hà Linh · 5 min</div>
+          </div>
+        </div>
+        <div class="list-story">
+          <div class="list-num">06</div>
+          <div>
+            <div class="list-category">Phỏng vấn</div>
+            <div class="list-title">Nghệ nhân gốm Bát Tràng thế hệ thứ tư nói về truyền thống</div>
+            <div class="list-meta">Biên tập · 12 min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--rule); width: 1px;"></div>
+
+    <div class="topics-sidebar">
+      <div class="topics-title">
+        <span>Chủ đề</span>
+        <span style="font-weight:400; font-size:9px;">Xem tất cả</span>
+      </div>
+      <div class="topic-item"><span class="topic-name">Công nghệ & AI</span><span class="topic-count">48 bài</span></div>
+      <div class="topic-item"><span class="topic-name">Văn hóa đại chúng</span><span class="topic-count">35 bài</span></div>
+      <div class="topic-item"><span class="topic-name">Tâm lý học</span><span class="topic-count">29 bài</span></div>
+      <div class="topic-item"><span class="topic-name">Thiết kế & Nghệ thuật</span><span class="topic-count">27 bài</span></div>
+      <div class="topic-item"><span class="topic-name">Xã hội học</span><span class="topic-count">22 bài</span></div>
+      <div class="topic-item"><span class="topic-name">Tản văn & Hồi ký</span><span class="topic-count">19 bài</span></div>
+      <div class="topic-item"><span class="topic-name">Khoa học</span><span class="topic-count">16 bài</span></div>
+
+      <div class="newsletter-box">
+        <div class="nl-label">Bản tin hàng tuần</div>
+        <div class="nl-title">Đọc sâu hơn, hiểu rõ hơn</div>
+        <p class="nl-desc">Mỗi thứ Sáu, chúng tôi gửi tuyển chọn 5 bài viết đáng đọc nhất trong tuần.</p>
+        <div class="nl-form">
+          <input class="nl-input" type="email" placeholder="email@của.bạn">
+          <button class="nl-btn">Đăng ký</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">The Journal</div>
+    <div class="footer-links">
+      <a href="#">Giới thiệu</a>
+      <a href="#">Viết cho chúng tôi</a>
+      <a href="#">Quảng cáo</a>
+      <a href="#">Chính sách</a>
+    </div>
+    <div class="footer-copy">© 2026 The Journal. Bảo lưu mọi quyền.</div>
+  </div>
+</footer>
+
+</body>
+</html>
