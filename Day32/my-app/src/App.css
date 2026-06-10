@@ -6,7 +6,33 @@ body{
   height: 100%;
 }
 .container {
+  width: 50%;
+  height: 100%;
+  margin-left: 50px;
+}
+
+.youtube-item {
   width: 100%;
   height: 100%;
-  background-color: red;
+
+}
+.youtube-item img{
+  width: 100%;
+}
+.youtube-footer {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.youtube-footer img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+
+}
+.youtube-info{
+  height: 100px;
+}
+.youtube-info h3 , h4 {  
+  margin: 10px;
 }
